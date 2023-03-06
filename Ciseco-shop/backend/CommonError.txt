@@ -1,0 +1,46 @@
+1 . 
+ res.status(error.statusCode).json({  ==> right
+ res.status(error, statusCode).json({
+      success: false,
+      message: error.message || "Internal Server Error",
+})
+<body>
+	<pre>ReferenceError: statusCode is not defined<br> &nbsp; &nbsp;at module.exports (E:\E-Commerce MERN\Ciseco-shop\backend\middlewares\error.js:25:23)<br> &nbsp; &nbsp;at Layer.handle_error (E:\E-Commerce MERN\Ciseco-shop\backend\node_modules\express\lib\router\layer.js:71:5)<br> &nbsp; &nbsp;at trim_prefix (E:\E-Commerce MERN\Ciseco-shop\backend\node_modules\express\lib\router\index.js:326:13)<br> &nbsp; &nbsp;at E:\E-Commerce MERN\Ciseco-shop\backend\node_modules\express\lib\router\index.js:286:9<br> &nbsp; &nbsp;at Function.process_params (E:\E-Commerce MERN\Ciseco-shop\backend\node_modules\express\lib\router\index.js:346:12)<br> &nbsp; &nbsp;at Immediate.next (E:\E-Commerce MERN\Ciseco-shop\backend\node_modules\express\lib\router\index.js:280:10)<br> &nbsp; &nbsp;at Immediate.&lt;anonymous&gt; (E:\E-Commerce MERN\Ciseco-shop\backend\node_modules\express\lib\router\index.js:646:15)<br> &nbsp; &nbsp;at processImmediate (node:internal/timers:468:21)</pre>
+</body>
+
+2. Mongoose schema validation not working while adding data 
+const product = await Product.create(req.body ,{  runValidators: true})
+
+3 . When forgot password 
+"errMessage": "getaddrinfo ENOTFOUND \"smtp.gmail.io\",",
+==> replace (:) to (=) in .env file
+
+4. if you make mistake in uppercase in lowercase and vice-versa
+"errMessage": "Old password is incorrect ",
+==> Worng = const isMatched = await user.comparePassword(req.body.oldpassword)
+{
+       "oldPassword":"sunil1232",
+       "password":"sunil1234"
+} 
+==> Right = const isMatched = await user.comparePassword(req.body.oldPassword)
+{
+       "oldPassword":"sunil1232",
+       "password":"sunil1234"
+} 
+
+5. yadi  "/order/:id" yo chai 1st ma bhayo yo "/order/me" bhanda bhane 
+Wrong : 
+==>"/order/:id"
+==>"/order/me"
+"message": "Cast to ObjectId failed for value \"me\" (type string) at path \"_id\" for model \"Order\""
+Soln : 
+==> router.get("/order/me", isAuthenticatedUser, loggedInUserOrders)
+==> router.get("/order/:id", isAuthenticatedUser, getSingleOrder)
+
+6. QUERY WAS ALREADY EXECUTED: PORDUCT.FIND({ PRICE: { '$LTE': 1000, '$GTE': 1 } })
+ error => products = await apifeatures.query
+ right => products = await apifeatures.query.clone()
+
+7. Uncaught (in promise) IntegrationError: You should not use your secret key with Stripe.js. Please pass a publishable key instead.
+==> yadi secret key ra publishable key exchange bhayo bane yo error aauxa
+

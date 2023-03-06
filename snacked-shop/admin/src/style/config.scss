@@ -1,0 +1,58 @@
+@mixin width($width, $height, $radius) {
+  width: $width;
+  height: $height;
+  border-radius: $radius;
+}
+@mixin positions($position, $top, $left, $bottom, $right, $background) {
+  position: $position;
+  top: $top;
+  left: $left;
+  bottom: $bottom;
+  right: $right;
+  background: $background;
+}
+@mixin flex($justify, $align, $direction) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+@mixin transition {
+  transition: all 0.2s ease-out;
+}
+@mixin grid($repeat, $gap) {
+  display: grid;
+  grid-template-columns: $repeat;
+  grid-gap: $gap;
+}
+@mixin sizes_weight($padding, $margin, $weight, $size) {
+  padding: $padding;
+  margin: $margin;
+  font-weight: $weight;
+  font-size: $size;
+}
+$size: (
+  size-30: 30px,
+  size-40: 40px,
+  size-50: 50px,
+  size-60: 60px,
+  size-70: 70px,
+  size-80: 80px,
+  size-150: 150px,
+);
+@each $sizes, $box in $size {
+  .#{$sizes} {
+    width: $box;
+    height: $box;
+  }
+}
+.flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);
+  margin-bottom: 1.5rem;
+  color: $primary-color;
+}

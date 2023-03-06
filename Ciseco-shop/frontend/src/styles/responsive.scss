@@ -1,0 +1,14 @@
+@media only screen and (max-width: 768px) {
+  .success {
+    .flex-between {
+      flex-direction: column !important;
+    }
+    &_left {
+      grid-gap: 20px !important;
+    }
+    &_left,
+    &_right {
+      width: 100% !important;
+    }
+  }
+}

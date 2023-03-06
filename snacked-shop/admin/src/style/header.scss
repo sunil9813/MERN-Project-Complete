@@ -1,0 +1,92 @@
+.header {
+  @include positions(sticky, 0, 0, none, none, #fff);
+  box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);
+  border-bottom: 1px solid #e2e3e4;
+  height: 65px;
+  padding: 9px 0;
+  z-index: 99;
+
+  .container {
+    @include flex(space-between, center, none);
+  }
+  &_right {
+    @include flex(flex-end, none, none);
+    margin-top: 13px;
+  }
+
+  &_search {
+    &_input {
+      @extend .container;
+      @include width(400px, 45px, 50px);
+      background: $white-700;
+      padding: 0 20px;
+      border: 1px solid #e2e3e4;
+    }
+  }
+
+  &_profile {
+    &_img {
+      margin: -10px 0 0 30px;
+      cursor: pointer;
+      img {
+        @include width(40px, 40px, 50%);
+      }
+    }
+    .profilePic {
+      @include flex(none, center, none);
+      border-bottom: 1px solid #dee2e6;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      &_img {
+        img {
+          @include width(70px, 70px, 50%);
+          margin-right: 20px;
+        }
+      }
+    }
+
+    .modelContent_boxs_box {
+      padding: 7px 20px;
+      &_item {
+        width: 0;
+        height: auto;
+      }
+      margin: 0;
+      margin-bottom: 5px;
+      .text {
+        margin: 0;
+        margin-left: 20px;
+      }
+    }
+    button {
+      padding: 0 10px;
+      @include flex(flex-start, center, none);
+      .icon {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .header_widget {
+    .modelContent {
+      &_boxs {
+        @include grid(repeat(3, 1fr), 0);
+        place-items: center;
+        &_box {
+          @include flex(center, center, column);
+          width: 90%;
+          &_item {
+            @include width(60px, 60px, 50%);
+            i {
+              color: #fff;
+            }
+          }
+          .text {
+            text-align: center;
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+  }
+}

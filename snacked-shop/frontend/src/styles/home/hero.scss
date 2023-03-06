@@ -1,0 +1,26 @@
+.hero {
+  background-color: #e3ffe6;
+  height: 90vh;
+  &_content {
+    display: flex !important;
+    align-items: center;
+    height: 90vh;
+    &_left {
+      width: 55%;
+      h3 {
+        text-transform: capitalize;
+      }
+      h1 {
+        font-size: 60px;
+        line-height: 60px;
+        margin: 50px 0;
+      }
+    }
+    &_right {
+      width: 49%;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

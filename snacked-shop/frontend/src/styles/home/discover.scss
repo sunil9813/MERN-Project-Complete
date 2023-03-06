@@ -1,0 +1,65 @@
+.discover {
+  position: relative;
+  &_content {
+    margin: 80px 0;
+    .title_head {
+      margin: 30px 0;
+    }
+    &_items {
+      &_item {
+        &_box {
+          margin: 10px;
+          padding: 20px;
+          border-radius: 10px;
+          @include transition;
+          &:hover {
+            background-color: rgba(#000000, 0.04);
+          }
+
+          &_text {
+            width: 50%;
+            span {
+              font-size: 15px;
+              text-transform: capitalize;
+            }
+            h2 {
+              font-size: 22px;
+              text-transform: capitalize;
+              margin: 10px 0 30px 0;
+            }
+          }
+          &_img {
+            width: 50%;
+            img {
+              width: 100%;
+            }
+          }
+        }
+        .bgcolor1 {
+          background: #fefce8;
+        }
+        .bgcolor2 {
+          background: #fef2f2;
+        }
+        .bgcolor3 {
+          background: #eff6ff;
+        }
+        .bgcolor4 {
+          background: #f0fdf4;
+        }
+      }
+    }
+  }
+}
+
+/*
+background: #fefce8;
+background: #fef2f2;  
+background-color: #f0fdf4;
+.boxs .box:nth-child(3) {
+  background-color: #eff6ff;
+}
+.discover_content_items_item_box:nth-child(4) {
+  background-color: #f0fdf4;
+}
+*/

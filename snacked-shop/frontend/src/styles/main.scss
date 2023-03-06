@@ -1,0 +1,124 @@
+@import "config";
+@import "variable";
+@import "reset";
+@import "header";
+@import "responsive";
+@import "./home/hero";
+@import "./home/discover";
+@import "./home/product";
+@import "./home/steps";
+@import "./home/explore";
+@import "./common/footer";
+@import "./common/productPage";
+
+body {
+  background: $white;
+  font-family: "Poppins", sans-serif;
+}
+
+input,
+button,
+li {
+  @include default;
+}
+.priceBox {
+  border: 3px solid $green;
+  border-radius: 8px;
+  padding: 4px 10px;
+  color: $green;
+  font-size: 15px;
+  font-weight: 500;
+}
+.button {
+  padding: 17px 60px;
+  background-color: #0f172a;
+  color: #f8fafc;
+  border-radius: 50px;
+  font-size: 17px;
+}
+.button-primary {
+  padding: 17px 30px;
+  background-color: #fff;
+  color: $onBlueContainer;
+  border-radius: 50px;
+  font-size: 17px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.button-icon {
+  padding: 22px 40px;
+  background-color: #0f172a;
+  color: #f8fafc;
+  border-radius: 50px;
+  font-size: 17px;
+  @include flex(center, center, none);
+  font-size: 18px;
+  @include transition;
+  &:hover {
+    background: rgba($color: #0f172a, $alpha: 0.75);
+  }
+  .bicon {
+    margin-right: 5px;
+  }
+}
+.button-outline {
+  padding: 17px 60px;
+  background-color: $white;
+  border-radius: 50px;
+  font-size: 17px;
+  color: #334155;
+  border: 1px solid rgba($color: #000000, $alpha: 0.1);
+  @include transition;
+  &:hover {
+    background: rgba($color: #000000, $alpha: 0.02);
+  }
+}
+hr {
+  opacity: 0.3;
+}
+/*----- control btn -------*/
+.control-btn .next,
+.control-btn .prev {
+  position: absolute;
+  top: 40%;
+  transform: 0.5s;
+  z-index: 5;
+}
+.control-btn .prev {
+  left: -50px;
+}
+.control-btn .next {
+  right: -50px;
+}
+.control-top .next,
+.control-top .prev {
+  position: absolute;
+  top: -30%;
+  transform: 0.5s;
+  z-index: 5;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid rgba(#334155, 0.3);
+  opacity: 0.5;
+}
+.control-top .prev {
+  left: 95%;
+}
+.control-top .next {
+  right: -50px;
+}
+/*.control-top .prev:hover,
+.control-top .next:hover {
+  background: #e94560;
+  color: white;
+  cursor: pointer;
+}*/
+/*----- control btn -------*/
+.title_head {
+  h1 {
+    font-size: 40px;
+  }
+  span {
+    color: rgba($color: #000000, $alpha: 0.4);
+  }
+}

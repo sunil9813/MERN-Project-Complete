@@ -1,0 +1,50 @@
+.main {
+  background: #f7f7f9;
+  background: #fafafc;
+  display: flex;
+  min-height: 100vh;
+  max-width: 95%;
+  margin: auto;
+}
+.admin {
+  width: 79%;
+}
+.sidebar {
+  min-height: 100vh;
+  width: 20%;
+  padding: 30px 0;
+  //box-shadow: 5px 2px 6px -5px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  li {
+    display: flex;
+    align-items: center;
+    a {
+      font-size: 15px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      width: 100%;
+      margin-bottom: 5px;
+    }
+
+    .aicon {
+      margin-right: 15px;
+      color: #000;
+    }
+    a.active .aicon,
+    a.active {
+      color: #3f51b5;
+    }
+    a.active {
+      background: rgba(#000000, 0.05);
+      border-left: 5px solid #3f51b5;
+    }
+  }
+}
+
+.admin-title {
+  font-size: 30px;
+}

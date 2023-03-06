@@ -1,0 +1,141 @@
+.productPage {
+  .model {
+    position: relative;
+    height: auto;
+    overflow: scroll;
+    z-index: 12;
+    width: 100%;
+    left: 0%;
+    border-radius: 0;
+  }
+  .product_card_img {
+    background-color: white !important;
+    img {
+      background-color: #f5f8fb !important;
+    }
+  }
+  .product_card_desc {
+    margin-top: 50px;
+    width: 70%;
+    h3 {
+      font-size: 25px;
+    }
+    ul li {
+      list-style-type: disc;
+      margin: 5px 50px;
+      color: gray;
+    }
+  }
+  .des-p {
+    font-size: 15px;
+    line-height: 30px;
+  }
+  .btn-desc {
+    padding: 0 !important;
+    background: none !important;
+    font-size: 25px !important;
+  }
+  .product_card_details_price {
+    margin: 30px 0;
+  }
+  .des-h5 {
+    h5 {
+      font-size: 17px;
+    }
+    label {
+      font-weight: 400;
+    }
+  }
+  .button {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin-top: 40px;
+  }
+}
+.alert-danger {
+  background-color: rgba(#ff0000, 0.1);
+  padding: 13px;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+.back_overlay {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(#000, 0.5);
+  z-index: 99999;
+}
+.modelReview {
+  position: fixed;
+  top: 20%;
+  left: 30%;
+  width: 40%;
+  height: 50vh;
+  background-color: white;
+  z-index: 999999;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .head {
+    padding: 20px;
+    background-color: $green;
+    margin-bottom: 30px;
+    h3,
+    .icon {
+      color: white;
+    }
+  }
+  ul {
+    display: flex;
+    margin-top: 30px;
+    margin-left: 30px;
+    li {
+      margin: 0 10px;
+    }
+  }
+  .textarea {
+    width: 100%;
+    padding: 30px 50px;
+    textarea {
+      width: 100%;
+      padding: 10px;
+      height: 100px;
+      border: 1px solid #334155;
+      padding: 13px;
+      color: #334155;
+      width: 100%;
+      text-transform: none;
+      border-radius: 10px;
+      &:focus {
+        box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+        border: 1px solid rgba(59, 130, 246, 0.5);
+      }
+    }
+  }
+  .priceBox {
+    padding: 14px 50px;
+    float: right;
+    margin: 0 50px;
+    background: $green;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 50px;
+  }
+}
+.none {
+  display: none;
+}
+.yellow {
+  color: yellow;
+}
+.orange {
+  color: $green;
+}
+.Toastify {
+  position: absolute;
+  z-index: 9999999999999999999;
+}

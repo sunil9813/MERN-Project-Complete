@@ -1,0 +1,19 @@
+footer {
+  padding: 50px 0;
+  .flex {
+    margin-bottom: 10px;
+  }
+  h3,
+  .logo {
+    margin-bottom: 20px;
+  }
+  h3 {
+    font-size: 17px;
+  }
+  span {
+    color: gray;
+    font-size: 15px;
+    display: block;
+    margin-bottom: 10px;
+  }
+}

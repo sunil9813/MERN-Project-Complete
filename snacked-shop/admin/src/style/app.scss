@@ -1,0 +1,87 @@
+.variantButton-outline,
+.variantButton {
+  border-radius: 50px;
+  padding: 5px 30px;
+  border: 1px solid rgba(0, 0, 0, 0.075);
+  @include transition;
+  &:focus {
+    background: $blue;
+    color: white;
+    border: none;
+  }
+}
+.variantButton-outline {
+  border: 1px solid rgba(0, 0, 0, 0.075);
+  background: none;
+  color: $gray_100;
+  @include transition;
+  &:hover {
+    border: 1px solid $gray-100;
+  }
+  &:focus {
+    background: $blue;
+    color: white;
+    border: none;
+  }
+}
+.btn-l {
+  background: $blue;
+  color: #fff;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  @include transition;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 100vh;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 100vh;
+  border: 3px solid #f6f7ed;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $primary-color;
+}
+tbody tr {
+  color: $gray-900;
+  text-transform: capitalize;
+}
+
+.profile {
+  position: relative;
+  width: 100%;
+}
+.profile::after {
+  content: "";
+  @include positions(absolute, 0, 0, none, none, none);
+  @include width(100%, 40vh, none);
+  background-image: linear-gradient(to bottom right, rgb(26 30 33 / 50%), rgb(0 0 0 / 50%)), url("../components//assets/images/user.png");
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+.reset,
+.forgot {
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    background-image: url("../components/assets/images/forgot-password.png");
+    background-size: cover;
+    z-index: -1;
+  }
+}
+.reset {
+  &::after {
+    background-image: url("../components/assets/images/bg-register-img.png");
+  }
+}

@@ -1,0 +1,111 @@
+.carts {
+  margin: 50px 0;
+  h1 {
+    font-size: 40px;
+    color: #000;
+    margin-bottom: 30px;
+  }
+  .header_container_right_cart_items_items {
+    place-items: center;
+    margin-bottom: 30px;
+  }
+  .dropdown-menus {
+    display: flex;
+    border-top: 1px solid rgba(12, 12, 12, 0.1);
+    border-bottom: 1px solid rgba(12, 12, 12, 0.1);
+    padding: 50px 0;
+
+    .header_container_right_cart_items {
+      height: auto;
+      overflow: auto;
+      width: 60%;
+      .product_card_details_add {
+        margin: 40px 0;
+        &_text {
+          background-color: #f5f8fb;
+          height: 55px;
+          width: 150px;
+          padding: 0 10px;
+          border-radius: 50px;
+          button {
+            border: 1px solid rgba(0, 0, 0, 0.268);
+            border-radius: 50%;
+            transition: 0.5s ease-in;
+            &:hover {
+              border: 1px solid rgba(0, 0, 0, 0.6);
+            }
+          }
+          .cbtn {
+            color: rgba(0, 0, 0, 0.268);
+          }
+          input {
+            font-size: 17px;
+            margin-left: 15px;
+          }
+        }
+        &_cart_btn {
+          .button-icon {
+            padding: 18px 90px;
+          }
+        }
+      }
+    }
+    .header_container_right_cart_total {
+      width: 38%;
+      margin: 0 0 0 auto;
+      border-left: 1px solid rgba(0, 0, 0, 0.1);
+      padding-left: 50px;
+      background: none;
+      .text {
+        margin: 20px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding-bottom: 15px;
+        &:nth-child(6) {
+          border-bottom: none;
+        }
+      }
+      h3 {
+        color: gray;
+        font-weight: 400;
+        font-size: 17px;
+      }
+      .text1 {
+        color: black;
+        font-weight: 500;
+      }
+      button {
+        width: 100%;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      }
+    }
+    .header_container_right_cart_total::after {
+      display: none;
+    }
+    .header_container_right_cart_items_item_price {
+      justify-content: start;
+    }
+    .stockIn {
+      font-size: 12px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 50px;
+      padding: 4px 10px;
+      @include flex(center, center, center);
+      margin-top: 30px;
+      label {
+        font-size: 12px;
+        display: block;
+        margin-left: 5px;
+      }
+    }
+  }
+}
+.noproduct {
+  height: 60vh;
+  text-align: center;
+  img {
+    height: 100%;
+  }
+  h2 {
+    text-align: left;
+  }
+}

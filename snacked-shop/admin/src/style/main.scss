@@ -1,0 +1,133 @@
+@import "variable";
+@import "config";
+@import "reset";
+@import "header";
+@import "sidebar";
+@import "app";
+//$position, $top, $left, $bottom, $right, $background
+.badge {
+  cursor: pointer;
+  margin-left: 30px;
+  position: relative;
+
+  span {
+    @include positions(absolute, -10px, none, none, -8px, red);
+    @include width(18px, 18px, 50%);
+    @include flex(center, center, none);
+    color: $white-900;
+    font-size: 12px;
+  }
+}
+
+// model open
+.model {
+  background: red;
+  width: 200px;
+  height: 200px;
+}
+
+section {
+  position: relative;
+}
+.modelContent {
+  @include positions(absolute, 50px, none, none, -20px, $white-900);
+  @include width(360px, auto, 10px);
+  padding: 20px;
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+  @include sizes_weight(20px, none, none, none);
+  &_boxs {
+    position: relative;
+    h2 {
+      color: $gray-900;
+      @include sizes_weight(10px, none, 400, 21px);
+      border-bottom: 1px solid #dee2e6;
+    }
+    &_box {
+      @include flex(none, center, none);
+      margin: 5px 0;
+      padding: 5px;
+      @include transition;
+      &_item {
+        @include width(50px, 50px, 50%);
+        @include flex(center, center, none);
+        font-size: 25px;
+        img {
+          @include width(50px, 50px, 50%);
+          object-fit: cover;
+        }
+      }
+      .text {
+        width: 68%;
+        margin: 0 15px;
+        a {
+          color: $gray-900;
+        }
+      }
+      h3 {
+        font-size: 14px;
+        text-transform: capitalize;
+      }
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.04);
+        @include transition;
+        cursor: pointer;
+        border-radius: 10px;
+      }
+    }
+    button {
+      padding-top: 10px;
+      border-top: 1px solid #dee2e6;
+      width: 100%;
+      font-size: 17px;
+    }
+    &::before {
+      content: "";
+      @include positions(absolute, -30px, none, none, 0, $white-900);
+      @include width(20px, 20px, none);
+      transform: rotate(45deg);
+    }
+  }
+}
+
+$colors: (
+  widget-1: linear-gradient(310deg, #7928ca, #ff0080),
+  widget-2: linear-gradient(to top, rgb(0, 198, 251) 0%, rgb(0, 91, 234) 100%),
+  widget-3: linear-gradient(310deg, #17ad37, #98ec2d),
+  widget-4: linear-gradient(to right, rgb(238, 9, 121), rgb(255, 106, 0)),
+  widget-5: linear-gradient(to right, rgb(247, 151, 30), rgb(255, 210, 0)),
+  widget-6: linear-gradient(to right, rgb(52, 148, 230), rgb(236, 110, 173)),
+  widget-7: linear-gradient(rgb(42, 245, 152) 0%, rgb(0, 158, 253) 100%),
+  widget-8: linear-gradient(to top, #c79081 0%, #dfa579 100%),
+  widget-9: linear-gradient(to top, #f77062 0%, #fe5196 100%),
+);
+@each $color, $wback in $colors {
+  .#{$color} {
+    background: $wback;
+  }
+}
+$notfibackColors: (
+  notif_1: rgba(52, 96, 255, 0.15),
+  notif_2: rgba(135, 50, 255, 0.15),
+  notif_3: rgb(18 191 35 / 15%),
+  notif_4: rgba(255, 101, 50, 0.15),
+  notif_5: rgba(50, 190, 255, 0.15),
+  notif_6: rgba(231, 46, 123, 0.15),
+);
+$notfiColors: (
+  notif_1: #3461ff,
+  notif_2: #8932ff,
+  notif_3: #12bf24,
+  notif_4: #ff6632,
+  notif_5: #32bfff,
+  notif_6: #e72e7a,
+);
+@each $notif, $back in $notfibackColors {
+  .#{$notif} {
+    background: $back;
+  }
+}
+@each $notif, $color in $notfiColors {
+  .#{$notif} {
+    color: $color;
+  }
+}

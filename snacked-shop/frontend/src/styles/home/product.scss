@@ -1,0 +1,290 @@
+.products {
+  position: relative;
+}
+.product {
+  position: relative;
+  margin-top: 50px;
+  &_card {
+    &_img {
+      background-color: #f8fafc;
+      border-radius: 20px;
+      position: relative;
+      margin-bottom: 20px;
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+      }
+      .discount {
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 3px 8px;
+        @include positions(absolute, 0, none, 0, none, none, none);
+        padding: 5px 20px;
+        margin: 10px;
+        border-radius: 50px;
+
+        @include flex(center, center, none);
+        span {
+          margin-left: 10px;
+          font-size: 15px;
+          color: gray;
+        }
+      }
+      .heart {
+        background-color: white;
+        border-radius: 50%;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 3px 8px;
+        line-height: 60px;
+        @include positions(absolute, 0, none, none, 0, none, none);
+        margin: 10px;
+      }
+      &_overlay {
+        @include positions(absolute, none, 0, 0, none, 100%, none);
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: 500ms ease;
+        padding: 20px;
+        opacity: 0;
+
+        .button-icon {
+          padding: 10px 20px;
+          font-size: 14px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 8px;
+          &:nth-child(2) {
+            background-color: white;
+            color: $primary;
+          }
+        }
+      }
+      &:hover .product_card_img_overlay {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        transition: 500ms ease;
+      }
+    }
+    &_colors {
+      display: flex;
+    }
+    &_details {
+      h3 {
+        text-transform: capitalize;
+      }
+      span {
+        color: gray;
+        text-transform: capitalize;
+        margin-top: 3px;
+        margin-bottom: 15px;
+        display: block;
+      }
+
+      &_price {
+        label {
+          color: gray;
+        }
+        .picon {
+          color: #fbbf24;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}
+.colors {
+  display: flex !important;
+  margin: 10px 0;
+  /* div {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 7px;
+    position: relative;
+    opacity: 0.7;
+    cursor: pointer;
+    &::after {
+      content: "";
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      width: 24px;
+      height: 24px;
+      opacity: 0.7;
+      border-radius: 50%;
+      border: 2px solid rgba(0, 0, 0, 0.268);
+    }
+  }*/
+}
+.model {
+  position: fixed;
+  top: 10%;
+  left: 15%;
+  width: 70%;
+  height: 80vh;
+  background-color: white;
+  z-index: 999999;
+  border-radius: 20px;
+  padding: 30px;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 20px;
+  }
+  .product_card {
+    &_img {
+      width: 50%;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: repeat(10, 5vw);
+      grid-gap: 15px;
+      &_box:nth-child(1) {
+        grid-column-start: 1;
+        grid-column-end: 9;
+        grid-row-start: 1;
+        grid-row-end: 7;
+      }
+      &_box:nth-child(2) {
+        grid-column-start: 1;
+        grid-column-end: 5;
+        grid-row-start: 7;
+        grid-row-end: 11;
+      }
+      &_box:nth-child(3) {
+        grid-column-start: 5;
+        grid-column-end: 9;
+        grid-row-start: 7;
+        grid-row-end: 11;
+      }
+      &_box:nth-child(4) {
+        display: none;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 15px;
+      }
+    }
+    &_details {
+      width: 50%;
+      margin-left: 30px;
+      h3 {
+        font-size: 30px;
+      }
+      .priceBox {
+        padding: 5px 30px;
+        margin-right: 20px;
+      }
+      a {
+        text-decoration: underline;
+      }
+      h4 {
+        margin-top: 20px;
+        color: gray;
+        label {
+          color: black;
+        }
+      }
+      .colors {
+        div {
+          width: 60px;
+          height: 30px;
+          border-radius: 50px;
+          &::after {
+            width: 65px;
+            height: 33px;
+            border-radius: 50px;
+          }
+        }
+      }
+      &_size {
+        margin-top: 10px;
+        button {
+          width: 50px;
+          height: 40px;
+          border: 1px solid gray;
+          font-size: 15px;
+          font-weight: bold;
+          border-radius: 10px;
+          margin-right: 15px;
+          text-transform: uppercase;
+          @include transition;
+          &:focus {
+            @include transition;
+            background-color: #0284c7;
+            color: white;
+          }
+        }
+        .size.active {
+          background-color: #0284c7;
+          color: white;
+          border: none;
+        }
+      }
+      &_add {
+        margin: 40px 0;
+        &_text {
+          background-color: #f5f8fb;
+          height: 55px;
+          width: 170px;
+          padding: 0 10px;
+          border-radius: 50px;
+          button {
+            border: 2px solid rgba(0, 0, 0, 0.268);
+            border-radius: 50%;
+          }
+          .cbtn {
+            color: rgba(0, 0, 0, 0.268);
+          }
+          span {
+            line-height: 50px;
+            text-align: center;
+            font-size: 17px;
+          }
+        }
+        &_cart_btn {
+          .button-icon {
+            padding: 18px 90px;
+          }
+        }
+      }
+      .btn-desc {
+        background: #f5f8fb;
+        width: 100%;
+        text-align: left;
+        padding: 10px;
+        font-size: 18px;
+        border-radius: 10px;
+        margin: 20px 0;
+      }
+      p {
+        color: gray;
+      }
+      ul {
+        margin-left: 20px;
+        li {
+          list-style-type: disc;
+          margin: 5px;
+          color: gray;
+        }
+      }
+    }
+  }
+}
+.back-overlay {
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: 0;
+  width: 100%;
+  height: 200vh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 99999;
+}
+body.active-modal {
+  overflow-y: hidden;
+}

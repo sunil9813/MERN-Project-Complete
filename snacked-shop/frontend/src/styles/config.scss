@@ -1,0 +1,81 @@
+@mixin default {
+  background: none;
+  outline: none;
+  text-decoration: none;
+  list-style-type: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+@mixin transition {
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+@mixin zindex($pos, $index) {
+  position: $pos;
+  z-index: $index;
+}
+@mixin flex($content, $items, $direction) {
+  display: flex;
+  justify-content: $content;
+  align-items: $items;
+  flex-direction: $direction;
+}
+
+@mixin positions($pos, $top, $bottom, $left, $right, $width, $height) {
+  content: "";
+  position: $pos;
+  top: $top;
+  bottom: $bottom;
+  left: $left;
+  right: $right;
+  width: $width;
+  height: $height;
+}
+
+@mixin width($width, $height, $background, $colors, $radius, $padding) {
+  width: $width;
+  height: $height;
+  background: $background;
+  color: $colors;
+  border-radius: $radius;
+  padding: $padding;
+}
+
+@mixin grid($columns, $gap) {
+  display: grid;
+  grid-template-columns: $columns;
+  grid-gap: $gap;
+}
+@mixin media-md {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin media-sm {
+  @media screen and (max-width: 512px) {
+    @content;
+  }
+}
+
+$sizes: (
+  size-17: 17px,
+  size-30: 30px,
+  size-40: 40px,
+  size-45: 45px,
+  size-50: 50px,
+  size-60: 60px,
+  size-100: 100px,
+);
+
+@each $size-s, $size in $sizes {
+  .#{$size-s} {
+    width: $size;
+    height: $size;
+  }
+}
+$colors: #fefce8, #fef2f2, #eff6ff, #f0fdf4;

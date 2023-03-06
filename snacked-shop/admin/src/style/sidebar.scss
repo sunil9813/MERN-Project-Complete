@@ -1,0 +1,74 @@
+.sidebar {
+  @include positions(fixed, 0, 0, none, none, #fff);
+  @include width(80px, 100vh, none);
+  border-right: 1px solid #e2e3e4;
+  z-index: 100;
+  transition: 0.5s;
+  &_top {
+    @include flex(space-between, none, none);
+    border-bottom: 1px solid #e4e4e4;
+    padding: 15px;
+    &_logo {
+      @include flex(space-between, center, none);
+    }
+    img {
+      @include width(40px, none, none);
+      margin-right: 10px;
+    }
+    h2 {
+      color: $blue;
+    }
+    &_toggle {
+      color: $blue;
+      height: 35px;
+    }
+  }
+  &_bottom {
+    padding: 15px 10px;
+    margin-top: 15px;
+    &_lists {
+      &_list {
+        @include flex(left, center, none);
+        @include transition;
+        padding: 10px 15px;
+        border-radius: 4px;
+        font-size: 15px;
+        color: $gray-500;
+        letter-spacing: 0.5px;
+        border-left: 4px solid rgb(255 255 255 / 0%);
+        margin-bottom: 10px;
+        cursor: pointer;
+        i {
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+}
+.sidebarOpen {
+  @include positions(fixed, 0, 0, none, none, #fff);
+  @include width(270px, 100vh, none);
+  border-right: 1px solid #e2e3e4;
+}
+.active {
+  color: $blue;
+  text-decoration: none;
+  background-color: rgb(52 97 255 / 10%);
+  border-left: 4px solid $blue;
+  box-shadow: none;
+}
+.parent_list {
+  display: flex;
+  justify-content: space-between;
+}
+.sidebar-content {
+  height: 0;
+  overflow: hidden;
+  color: $blue;
+  padding: 0 20px;
+}
+.sidebar-item.open > .sidebar-content {
+  height: auto;
+  color: $blue;
+  transition: 0.5s ease-in-out;
+}
